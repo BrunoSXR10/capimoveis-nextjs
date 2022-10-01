@@ -1,5 +1,4 @@
 import Link from "../components/link";
-import buscaEndereco from "./api/abelha";
 
 const announcement = () => (
   <>
@@ -11,18 +10,18 @@ const announcement = () => (
             <h3 className="text-2xl font-black text-black">
               Cadastro de Imóvel
             </h3>
-            <p className="mt-1 text-2lg text-black-600">
+            <p className="mt-1 mb-5 text-2lg text-black-600">
               Preencha o formulario para cadastrar seu imóvel na nossa
               plataforma
             </p>
           </div>
         </div>
-        <div className="md:mt-10 md:col-span-2 md:mt-0 w-3/5 ml-60">
+        <div className=" flex justify-center md:mt-10  md:mt-0 w-5/5 "> {/* ml-60 */}
           <form action="#" method="POST">
-            <div className="shadow sm:overflow-hidden rounded-lg shadow-2xl">
-              <div className="space-y-6 bg-gray-100 px-4 py-5 sm:p-6" >
-                <div className="grid grid-cols-3 gap-6">
-                  <div className="col-span-3 sm:col-span-2">
+            <div className="shadow sm:overflow-hidden rounded-lg shadow-2xl md:mb-10">
+              <div className=" space-y-5 bg-gray-100 px-4 py-5 md:px-20 md:py-6 ">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="">
                     <label
                       htmlFor="company-website"
                       className="block text-sm font-medium text-gray-700"
@@ -282,6 +281,7 @@ const announcement = () => (
                 >
                   Salvar
                 </button>
+                
                   </div>
                 </div>     
               
@@ -294,14 +294,3 @@ const announcement = () => (
 );
 
 export default announcement;
-
-{
-  /* <select
-  className="bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded focus:outline-none focus:bg-white focus:border-gray-500"
-  id="grid-state"
->
-  <option>New Mexico</option>
-  <option>Missouri</option>
-  <option>Texas</option>
-</select>; */
-}
