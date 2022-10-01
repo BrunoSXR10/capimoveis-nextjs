@@ -9,7 +9,6 @@
 /coverage
 
 # next.js
-/.next/
 /out/
 
 # production
@@ -34,3 +33,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#besteiras
+/tailwind.config.js
+/yarn.lock
+/postcss.config.js
+/.eslintrc.json
