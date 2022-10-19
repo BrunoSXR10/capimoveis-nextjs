@@ -1,4 +1,4 @@
-import Link from "../components/link";
+
 import Navbar from "../components/Navbar";
 import TabelaCorretor from "../components/tabela";
 import TypeCorretor from "../../client/corretor";
