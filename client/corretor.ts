@@ -15,6 +15,10 @@ export default class TypeCorretor {
         return new TypeCorretor ('', '', '', 0)
     }
 
+    addImovel(): void{
+        this.qtdImov++
+      }
+
     // get nome(){
     //     return this.nome
     // }

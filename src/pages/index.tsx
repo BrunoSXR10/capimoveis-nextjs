@@ -1,8 +1,8 @@
-
 import Navbar from "../components/Navbar";
 import TabelaCorretor from "../components/tabela";
 import TypeCorretor from "../../client/corretor";
 import Layout from "../components/Layout";
+import Footer from "../components/footer";
 
 export default function Example() {
 
@@ -12,12 +12,13 @@ export default function Example() {
     new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
     new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
     new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
-    new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6)
+    new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
+
   ]
   
   return (
 
-    <>
+    <div>
       <Navbar/>
       <Layout>
 
@@ -25,7 +26,8 @@ export default function Example() {
       <TabelaCorretor corretor={corretores}/>
         
       </Layout>
+      <Footer/>
       
-    </>
+    </div>
   )
 }

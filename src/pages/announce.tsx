@@ -1,7 +1,8 @@
 import Navbar from "../components/Navbar";
+import TabelaCorretor from "../components/tabela";
 
 export default function TabelaAnunciar() {
-  return(
+  return (
     <div>
       <div className=" md:gap-6 bg-gradient-to-b from-slate-100 to-blue-900">
         <div className="md:col-span-1 flex text-center justify-center">
@@ -105,19 +106,38 @@ export default function TabelaAnunciar() {
 
                 <div className="col-span-6 sm:col-span-6 lg:col-span-2">
                   <label
-                    htmlFor="Preço"
+                    htmlFor="price"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Valor
+                    Valor do Imóvel
                   </label>
-                  <div className="mt-1 flex rounded-md shadow-sm">
+                  <div className="relative mt-1 rounded-md shadow-sm">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                      <span className=" text-gray-500 sm:text-sm">R$</span>
+                    </div>
                     <input
                       type="text"
-                      name="Valor"
-                      id="Valor"
-                      autoComplete="Valor"
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      name="price"
+                      id="price"
+                      className="block w-full rounded-md border-gray-300 pl-8 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      placeholder="0,00"
                     />
+                    <div className="absolute inset-y-0 right-0 flex items-center">
+                      <label htmlFor="currency" className="sr-only">
+                        Currency
+                      </label>
+                      <select
+                        id="currency"
+                        name="currency"
+                        className="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      >
+                        <option>BRL</option>
+                        <option>USD</option>
+                        <option>BIT</option>
+                        <option>Libra esterlina escocesa</option>
+                        
+                      </select>
+                    </div>
                   </div>
                 </div>
                 <div className="grid grid-cols-6 gap-6">
@@ -301,7 +321,7 @@ export default function TabelaAnunciar() {
 
                 <button
                   type="submit"
-                  className="flex justify-end rounded-md border border-transparent bg-gradient-to-r from-blue-400 to-purple-700 py-2 px-5 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="flex justify-end rounded-md border border-transparent bg-gradient-to-r from-blue-900 to-purple-800 py-2 px-5 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
                   Salvar
                 </button>
@@ -309,9 +329,8 @@ export default function TabelaAnunciar() {
             </div>
           </form>
         </div>
+        {/* <TabelaCorretor/> */}
       </div>
     </div>
-  )
-
-
+  );
 }

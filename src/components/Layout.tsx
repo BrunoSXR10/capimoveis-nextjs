@@ -1,14 +1,14 @@
 
 interface LayoutProps{
 Titulo?: string
-children: any
+children?: any
 }
 
 export default function Layout(props: LayoutProps) {
 
     return(
         <div className={`
-        flex flex-col w-full
+        flex flex-col
         bg-white text-gray-900 rounded-md
         `}>
            <h1> {props.Titulo} </h1>         

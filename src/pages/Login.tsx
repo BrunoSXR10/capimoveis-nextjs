@@ -3,7 +3,7 @@ export default function Login () {
     
     
     return(
-        <div className= " bg-gradient-to-r from-purple-400 to-blue-600">
+        <div className= "bg-gradient-to-b from-slate-100 to-blue-900">
             
 
 
