@@ -1,8 +1,10 @@
 import Navbar from "../components/Navbar";
-import TabelaCorretor from "../components/tabela";
+import TabelaCorretor from "../components/tabelaC";
 import TypeCorretor from "../../client/corretor";
 import Layout from "../components/Layout";
 import Footer from "../components/footer";
+import Login from "./login";
+import React, { useState } from "react";
 
 export default function Example() {
 
@@ -11,23 +13,23 @@ export default function Example() {
     new TypeCorretor('pintor', '932.378.875-49', 'pintor@gmail', +6),
     new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
     new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
-    new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
-    new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
-
   ]
+
+  const [visible, setVisible] = useState()
   
   return (
 
-    <div>
+    <React.Fragment>
       <Navbar/>
       <Layout>
 
+      {/* <Login/> */}
       {/* <TabelaAnunciar/> */}
       <TabelaCorretor corretor={corretores}/>
         
       </Layout>
       <Footer/>
       
-    </div>
+    </React.Fragment>
   )
 }

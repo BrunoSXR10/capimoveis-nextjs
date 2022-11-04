@@ -26,7 +26,7 @@ export default function Footer() {
             </h2>
             <ul className="text-gray-600 dark:text-gray-400">
               <li className="mb-4">
-                <a href="https://flowbite.com/" className="hover:underline">
+                <a href="./login" className="hover:underline">
                   Sign-In
                 </a>
               </li>

@@ -16,10 +16,10 @@ export default function TabelaCorretor(props: TabelaProps) {
   function renderCabecalho() {
     return (
       <tr className="">
-        <th className="px-20">Corretor</th>
-        <th className="px-5">CPF</th>
-        <th className="px-5">Imovéis Anunciados</th>
-        <th className="px-5">Ver</th>
+        <th className="px-20 py-3 bg-gray-100 text-gray-600">Corretor</th>
+        <th className="px-5 py-3 bg-gray-100 text-gray-600">CPF</th>
+        <th className="px-5 py-3 bg-gray-100 text-gray-600">Imovéis Anunciados</th>
+        <th className="px-5 py-3 bg-gray-100 text-gray-600">Ver</th>
       </tr>
     );
   }
@@ -28,11 +28,11 @@ export default function TabelaCorretor(props: TabelaProps) {
     return props.corretor?.map((corretores, i) => {
     return (
       <tr key={corretores.creci} 
-      className={`${i % 2 === 0 ? 'bg-gray-200' : 'bg-gray-100'}`}>
-        <td className="font-mono">{corretores.nome}</td>
-        <td className="font-mono">{corretores.creci}</td>
-        <td className="font-mono">{corretores.qtdImov}</td>
-        <td className="">{renderAcao(corretores)}</td>
+      className={`${i % 2 === 0 ? 'bg-white' : 'bg-white'} border-b border-gray-200`}>
+        <td className="text-gray-600">{corretores.nome}</td>
+        <td className="text-gray-600">{corretores.creci}</td>
+        <td className="text-gray-600">{corretores.qtdImov}</td>
+        <td className="text-gray-600">{renderAcao(corretores)}</td>
         
       </tr>
     )
@@ -61,17 +61,17 @@ export default function TabelaCorretor(props: TabelaProps) {
           alt="Picture of the author"
           width="350px"
           height="300px"
-          className="border shadow-lg rounded-2xl"
+          className="border shadow-lg rounded-2xl "
         />
       )
     }
   return (
       <div className="flex flex-col-2">
-        <table className="mt-16 ml-8 border rounded-md overflow-hidden">
-            <thead className="bg-gradient-to-t from-slate-700 to-black text-gray-200">{renderCabecalho()}</thead>
+        <table className="mt-16 ml-8 mb-16 shadow-2xl rounded-md overflow-hidden ">
+            <thead className="">{renderCabecalho()}</thead>
             <tbody>{renderData()}</tbody>          
         </table>
-        <div className= "ml-40 mt-20">
+        <div className= "flex ml-24 items-center">
           {caiu_na_vila_o_peixe_fuzila()}
         </div>
       </div>

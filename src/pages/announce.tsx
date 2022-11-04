@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import TabelaCorretor from "../components/tabela";
+import TabelaCorretor from "../components/tabelaC";
 
 export default function TabelaAnunciar() {
   return (
@@ -319,12 +319,21 @@ export default function TabelaAnunciar() {
                   />
                 </div>
 
+              <div className="flex flex-row">
+
                 <button
                   type="submit"
                   className="flex justify-end rounded-md border border-transparent bg-gradient-to-r from-blue-900 to-purple-800 py-2 px-5 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
+                  >
                   Salvar
                 </button>
+                <button
+                  type="submit"
+                  className="flex ml-5 justify-end rounded-md border border-transparent bg-gradient-to-r from-red-900 to-red-700 py-2 px-5 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  Cancelar
+                </button>
+              </div>
               </div>
             </div>
           </form>
