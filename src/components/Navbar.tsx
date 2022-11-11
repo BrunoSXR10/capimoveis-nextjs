@@ -17,7 +17,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
+interface PropsNavbar {
+  salve?: () => void
+}
+
+export default function Navbar(props: PropsNavbar) {
   return (
     <Disclosure as="nav" className="bg-gradient-to-r from-indigo-700 via-purple-500 to-slate-800">
       {({ open }) => (

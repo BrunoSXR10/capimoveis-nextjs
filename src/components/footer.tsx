@@ -1,7 +1,11 @@
 import Image from "next/image";
 import capivara from "../../public/img/cap.png";
 
-export default function Footer() {
+interface propsFooter {
+  salsa?: () => void
+}
+
+export default function Footer(props: propsFooter) {
   return (
     <footer className="p-4 bg-gradient-to-r from-indigo-900 via-purple-700 to-slate-800 sm:p-6">
       <div className="md:flex md:justify-between">
@@ -31,9 +35,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://tailwindcss.com/" className="hover:underline">
+                <button onClick={() => props.salsa} className="hover:underline">
                   Sign-Up
-                </a>
+                </button>
               </li>
             </ul>
           </div>

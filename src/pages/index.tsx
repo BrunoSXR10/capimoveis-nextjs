@@ -1,35 +1,52 @@
+/* eslint-disable @next/next/no-img-element */
 import Navbar from "../components/Navbar";
 import TabelaCorretor from "../components/tabelaC";
 import TypeCorretor from "../../client/corretor";
 import Layout from "../components/Layout";
 import Footer from "../components/footer";
 import Login from "./login";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import RegCorretor from "./regCorretor";
+import { rato } from "../components/icons";
+import TypeImovel from "../../client/imovel";
 
-export default function Example() {
+export default function Home() {
+  const [cliente, setCliente] = useState<TypeCorretor>(TypeCorretor.vazio());
+  const [corretores, setCorretor] = useState<TypeCorretor[]>([]);
+  const [visivel, setVisivel] = useState<"table" | "form">("table");
 
-  const corretores = [
-    new TypeCorretor('garrafa', '061.489.555-39', 'garrafa@gmail', +2),
-    new TypeCorretor('pintor', '932.378.875-49', 'pintor@gmail', +6),
-    new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
-    new TypeCorretor('MAURICIO PURPURINA', '932.378.875-49', 'pintor@gmail', +6),
+  function salvarCorretor() {
+    setVisivel("table");
+  }
+
+  function trabalho() {
+    setVisivel("form");
+  }
+
+  const pessoas = [
+    new TypeCorretor('bruno souza', '061.489.555-39', 'bruno', 2)
   ]
 
-  const [visible, setVisible] = useState()
-  
+  const imoveis = [
+    /* new TypeImovel() */
+  ]
+
   return (
-
-    <React.Fragment>
-      <Navbar/>
+    <>
       <Layout>
-
-      {/* <Login/> */}
-      {/* <TabelaAnunciar/> */}
-      <TabelaCorretor corretor={corretores}/>
-        
+        {visivel === "table" ? (
+          <div>
+            <Navbar/>
+            <TabelaCorretor corretor={pessoas}
+            />
+          </div>
+        ) : (
+          <>
+            <RegCorretor corretor={undefined} corretorMudou={salvarCorretor} />
+          </>
+        )}
+        <Footer/>
       </Layout>
-      <Footer/>
-      
-    </React.Fragment>
-  )
+    </>
+  );
 }

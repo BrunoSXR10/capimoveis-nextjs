@@ -9,8 +9,9 @@ module.exports = {
       fontFamily: {
         
       }
-    },
+    }
   },
+
   plugins: [
     require('@tailwindcss/forms')  
   ],

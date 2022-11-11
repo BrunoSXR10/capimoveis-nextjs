@@ -1,3 +1,5 @@
+import { url } from "inspector";
+
 export const editar = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +17,7 @@ export const editar = (
   </svg>
 );
 
-export const lixo = (
+export const imoveis = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -31,3 +33,7 @@ export const lixo = (
     />
   </svg>
 );
+
+export const rato = (
+  'https://w7.pngwing.com/pngs/817/116/png-transparent-cartoon-male-crazy-man-mammal-hand-vertebrate-thumbnail.png'
+)

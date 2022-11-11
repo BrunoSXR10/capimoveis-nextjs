@@ -1,91 +1,88 @@
-import TypeImovel from "../../client/imovel"
-import { LockClosedIcon } from '@heroicons/react/20/solid'
+import { render } from "@headlessui/react/dist/utils/render";
+import Image from "next/image";
+import TypeCorretor from "../../client/corretor";
+import { imoveis } from "./icons";
+import sos from "../../public/img/quien.jpg";
+import bg1 from "../../public/img/img1.jpg";
 
-interface ImovelProps {
-    imovel?: TypeImovel
+interface TabelaIProps {
+  corretor?: TypeCorretor[];
+  apagarCadastro?: (corretor: TypeCorretor) => void;
+  editarCadastro?: (corretor: TypeCorretor) => void;
+  addImov?: (corretor: TypeCorretor) => void;
+  affsvida?: () => void;
 }
 
-export default function TabelaImovel(props: ImovelProps) {
-    return(
-        <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-md space-y-8">
-          <div>            
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-              Sign in to your account
-            </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
-              Or{' '}
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                start your 14-day free trial
-              </a>
-            </p>
-          </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
-            <input type="hidden" name="remember" defaultValue="true" />
-            <div className="-space-y-px rounded-md shadow-sm">
-              <div>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                  placeholder="Email address"
-                />
-              </div>
-              <div>
-                <label htmlFor="password" className="sr-only">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                  placeholder="Password"
-                />
-              </div>
-            </div>
+export default function TabelaImovel(props: TabelaIProps) {
+  function renderCabecalho() {
+    return (
+      <>
+      <tr className="">
+        <th className=" py-3 px-7 bg-gray-100 text-gray-600">Endereço</th>
+        <th className=" py-3 px-7 bg-gray-100 text-gray-600">Status</th>
+        <th className=" py-3 px-5 bg-gray-100 text-gray-600">Categoria</th>
+        <th className=" py-3 px-5 bg-gray-100 text-gray-600">Finalidade</th>
+        <th className=" py-3 px-5 bg-gray-100 text-gray-600">Valor</th>
+        <th className=" py-3 px-5 bg-gray-100 text-gray-50"> <button className="bg-purple-800 px-2 rounded-md"> Add New </button> </th>
+      </tr>
+      </>
+    );
+  }
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                  Remember me
-                </label>
-              </div>
+  function renderData() {
+    return props.corretor?.map((corretores, i) => {
+      return (
+        <>
+        <tr
+        key={corretores.creci}
+        className={`${
+            i % 2 === 0 ? "bg-white" : "bg-white"
+          } border-b border-gray-200`}
+          >
+          <td className="px-4 text-gray-600">{corretores.nome}</td>
+          <td className="px-4 text-gray-600">{corretores.creci}</td>
+          <td className="text-gray-600">{corretores.qtdImov}</td>
+          <td className="text-gray-600">{renderAcao(corretores)}</td>
+        </tr>
+        </>
+      );
+    });
+  }
 
-              <div className="text-sm">
-                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Forgot your password?
-                </a>
-              </div>
-            </div>
+  function renderAcao(corretor: TypeCorretor) {
+    return (
+      <td className="w-1/3">
+        <button
+          className="text-indigo-800 rounded-xl p-2 m-1 hover:bg-white"
+          onClick={() => props.apagarCadastro?.(corretor)}
+        >
+          {imoveis}
+        </button>
+      </td>
+    );
+  }
 
-            <div>
-              <button
-                type="submit"
-                className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
-                </span>
-                Sign in
-              </button>
-            </div>
-          </form>
-        </div>
+  const caiu_na_vila_o_peixe_fuzila = () => {
+    return (
+      <>
+        {/* <Image
+          src={sos}
+          alt="Picture of the author"
+          width="350px"
+          height="300px"
+          className="border shadow-lg rounded-2xl "
+        /> */}
+      </>
+    );
+  };
+  return (
+    <div className="bg-[url('../../public/img/img3.jpg')] bg-no-repeat h-screen bg-cover bg-bottom">
+      <div className="flex">
+        <table className="mt-16 ml-16 mb-16 shadow-2xl rounded-md overflow-hidden ">
+          <thead className="">{renderCabecalho()}</thead>
+          <tbody>{renderData()}</tbody>
+        </table>
       </div>
-    )
+    </div>
+  );
 }
