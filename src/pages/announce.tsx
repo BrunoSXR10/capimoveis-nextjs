@@ -4,9 +4,9 @@ import TabelaCorretor from "../components/tabelaC";
 export default function TabelaAnunciar() {
   return (
     <div>
-      <div className=" md:gap-6 bg-gradient-to-b from-slate-100 to-blue-900">
+      <div className=" md:gap-6 bg-gradient-to-b from-slate-200 to-blue-900">
         <div className="md:col-span-1 flex text-center justify-center">
-          <div className="px-4 sm:px-0 md:mt-6">
+          <div className="px-4 sm:px-0 md:mt-4">
             <h3 className="text-2xl font-black text-black">
               Cadastro de Imóvel
             </h3>
@@ -16,7 +16,7 @@ export default function TabelaAnunciar() {
             </p>
           </div>
         </div>
-        <div className=" flex justify-center md:mt-10 w-5/5 ">
+        <div className=" flex justify-center md:mt-6 w-5/5 ">
           {" "}
           {/* ml-60 */}
           <form action="#" method="POST">

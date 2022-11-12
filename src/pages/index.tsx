@@ -11,32 +11,33 @@ import { rato } from "../components/icons";
 import TypeImovel from "../../client/imovel";
 
 export default function Home() {
-  const [cliente, setCliente] = useState<TypeCorretor>(TypeCorretor.vazio());
-  const [corretores, setCorretor] = useState<TypeCorretor[]>([]);
-  const [visivel, setVisivel] = useState<"table" | "form">("table");
+  // const [cliente, setCliente] = useState<TypeCorretor>(TypeCorretor.vazio());
+  // const [corretores, setCorretor] = useState<TypeCorretor[]>([]);
+  // const [visivel, setVisivel] = useState<"table" | "form">("table");
 
-  function salvarCorretor() {
-    setVisivel("table");
-  }
+  // function salvarCorretor() {
+  //   setVisivel("table");
+  // }
 
-  function trabalho() {
-    setVisivel("form");
-  }
+  // function trabalho() {
+  //   setVisivel("form");
+  // }
 
-  const pessoas = [
-    new TypeCorretor('bruno souza', '061.489.555-39', 'bruno', 2)
-  ]
+  // const pessoas = [
+  //   new TypeCorretor('bruno souza', '061.489.555-39', 'bruno', 2)
+  // ]
 
-  const imoveis = [
-    /* new TypeImovel() */
-  ]
+  // const imoveis = [
+  //    new TypeImovel() 
+  // ]
 
   return (
     <>
       <Layout>
-        {visivel === "table" ? (
+        <Navbar/>
+        <Login/>
+        {/* {visivel === "table" ? (
           <div>
-            <Navbar/>
             <TabelaCorretor corretor={pessoas}
             />
           </div>
@@ -44,7 +45,7 @@ export default function Home() {
           <>
             <RegCorretor corretor={undefined} corretorMudou={salvarCorretor} />
           </>
-        )}
+        )} */}
         <Footer/>
       </Layout>
     </>
