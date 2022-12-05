@@ -8,7 +8,7 @@ interface propsFooter {
 
 export default function Footer(props: propsFooter) {
   return (
-    <footer className="p-4 bg-gradient-to-b from-black to bg-slate-800 sm:p-6">
+    <footer className="p-4 bg-gradient-to-b from-purple-900 to bg-indigo-900 sm:p-6">
       <div className="md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
           <a href="https://flowbite.com/" className="flex items-center">

@@ -1,5 +1,3 @@
-
-
 import Image from "next/image";
 import capivara from "../../public/img/cap.png"
 import perfil from "../../public/img/perfil.png"
@@ -23,7 +21,7 @@ interface PropsNavbar {
 
 export default function Navbar(props: PropsNavbar) {
   return (
-    <Disclosure as="nav" className="bg-gradient-to-t from-indigo-900 to-slate-800">
+    <Disclosure as="nav" className="bg-gradient-to-t from-indigo-800 to-purple-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

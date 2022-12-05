@@ -11,7 +11,7 @@ export default function Layout(props: LayoutProps) {
         flex flex-col
         bg-white text-gray-900 rounded-md
         `}>     
-            <div className=" flex flex-col text-center bg-white ">
+            <div className="  bg-[url('../../public/img/img5.jpg')] bg-no-repeat h-full bg-cover bg-center flex flex-col bg-white ">
                 {props.children}
             </div>
 

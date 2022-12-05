@@ -1,8 +1,8 @@
 export default interface CardImovel{
-  foto: string
-  preco: string
-  descricao: string
-  local: string
+  id: number
+  cpf: string
+  email: string
+  nome: string
 }
 
 // export default class TypeImovel {

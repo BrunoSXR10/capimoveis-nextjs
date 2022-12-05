@@ -9,43 +9,28 @@ import React, { useEffect, useState } from "react";
 import RegCorretor from "./regCorretor";
 import { rato } from "../components/icons";
 import TypeImovel from "../../client/imovel";
+import CardPage from "./cardpage";
 
-export default function Home() {
-  // const [cliente, setCliente] = useState<TypeCorretor>(TypeCorretor.vazio());
-  // const [corretores, setCorretor] = useState<TypeCorretor[]>([]);
-  // const [visivel, setVisivel] = useState<"table" | "form">("table");
+export async function getStaticProps() {
+  const data = await fetch ('http://localhost:8080/imobiliario/clientes')
 
-  // function salvarCorretor() {
-  //   setVisivel("table");
-  // }
+  const cliente = await data.json()
 
-  // function trabalho() {
-  //   setVisivel("form");
-  // }
+  console.log(cliente)
 
-  // const pessoas = [
-  //   new TypeCorretor('bruno souza', '061.489.555-39', 'bruno', 2)
-  // ]
+  return {
+      props: {cliente},
+  }
+}
 
-  // const imoveis = [
-  //    new TypeImovel() 
-  // ]
+export default function Home( {cliente} ) {
 
   return (
     <>
       <Layout>
         <Navbar/>
         <Login/>
-        {/* {visivel === "table" ? (
-          <div>
-            <TabelaCorretor corretor={pessoas}
-            />
-          </div>
-        ) : (
-          <>
-            <RegCorretor corretor={undefined} corretorMudou={salvarCorretor} />
-          </>
-        )} */}
+        <CardPage cliente={cliente}/>
         <Footer/>
       </Layout>
     </>

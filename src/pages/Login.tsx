@@ -15,7 +15,7 @@ export default function Login(props: LoginProps) {
   function renderLogin() {
     return (
       <div className="">
-        <div className="flex px-16 py-14 bg-gray-100 bg-opacity-50 rounded-lg shadow-2xl">
+        <div className="flex px-16 py-14 mb-96 bg-gray-100 bg-opacity-50 rounded-lg shadow-2xl">
           <div className=" space-y-8 ">
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 to-slate-800">
@@ -67,7 +67,7 @@ export default function Login(props: LoginProps) {
                     htmlFor="remember-me"
                     className="ml-2 block text-sm text-gray-900"
                   >
-                    Lembre de mim bb
+                    Lembre de mim
                   </label>
                 </div>
 
@@ -116,8 +116,8 @@ export default function Login(props: LoginProps) {
 
   return (
     <>
-      <div className="flex bg-[url('../../public/img/fade-bg.jpg')] bg-no-repeat h-screen bg-cover bg-bottom">
-        <div className="ml-14 w-2/4 flex justify-center items-center">{renderLogin()}</div>
+      <div className="flex mx-60 my-28 justify-end items-center">
+        <div className="">{renderLogin()}</div>
       </div>
     </>
   );

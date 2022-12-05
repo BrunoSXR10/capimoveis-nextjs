@@ -4,7 +4,7 @@ import TabelaCorretor from "../components/tabelaC";
 export default function TabelaAnunciar() {
   return (
     <div>
-      <div className=" md:gap-6 bg-gradient-to-b from-slate-200 to-blue-900">
+      <div className=" md:gap-6 bg-[url('../../public/img/img5.jpg')] bg-cover h-full bg-center">
         <div className="md:col-span-1 flex text-center justify-center">
           <div className="px-4 sm:px-0 md:mt-4">
             <h3 className="text-2xl font-black text-black">
