@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { render } from "@headlessui/react/dist/utils/render";
 import Image from "next/image";
-import TypeCorretor from "../../client/corretor";
 import capivaragif from "../../public/img/capgif.gif";
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import Navbar from "../components/Navbar";
@@ -9,13 +8,11 @@ import Layout from "../components/Layout";
 import Footer from "../components/footer";
 
 
-interface LoginProps {}
-
-export default function Login(props: LoginProps) {
+export default function Login() {
   function renderLogin() {
     return (
       <div className="">
-        <div className="flex px-16 py-14 mb-96 bg-gray-100 bg-opacity-50 rounded-lg shadow-2xl">
+        <div className="flex px-16 py-14 mb-36 bg-gray-100 bg-opacity-50 rounded-lg shadow-2xl">
           <div className=" space-y-8 ">
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 to-slate-800">
@@ -102,17 +99,6 @@ export default function Login(props: LoginProps) {
     );
   }
 
-  const caiu_na_vila_o_peixe_fuzila = () => {
-    return (
-      <Image
-        src={capivaragif}
-        alt="Picture of the author"
-        width="350px"
-        height="300px"
-        className="border shadow-lg rounded-2xl"
-      />
-    );
-  };
 
   return (
     <>

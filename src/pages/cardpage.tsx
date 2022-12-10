@@ -1,28 +1,25 @@
 import { useEffect, useState } from "react";
-import CardImovel from "../../client/imovel";
+import CardImovel from "./bloc/imovel";
 import Card from "./card";
 
 export async function getStaticProps() {
-  const data = await fetch ('http://localhost:8080/imobiliario/clientes')
+  const data = await fetch ('http://localhost:8080/imobiliario/imoveis')
 
-  const cliente = await data.json()
+  const imovel = await data.json()
 
-  console.log(cliente)
+  console.log(imovel)
 
   return {
-      props: {cliente},
+      props: {imovel},
   }
 }
 
-export default function CardPage( {cliente} ) {
-    const [imoveis, setImoveis] = useState<CardImovel[]>()
+export default function CardPage( {imovel} ) {
     
     return (
-      <div className="bg-gray-300">
-      {/* <div className={`bg-gray-200
-      text-gray-900 font-sans italic text-center text-2xl py-5`}>LISTA DE IMÓVEIS</div> */}
+      <div /* className="bg-[url('../../public/img/preto.jpg')] bg-no-repeat h-full bg-cover bg-center" */>
       <div className="flex flex-col-4 mt-16 justify-center">
-      {cliente.map(item => <Card imovel={item} key={item.id} />)}
+      {imovel.map(item => <Card imovel={item} key={item.id} />)}
       </div>
     </div>
   );

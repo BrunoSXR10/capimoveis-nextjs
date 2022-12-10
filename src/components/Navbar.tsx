@@ -7,6 +7,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
+  { name: 'Ver Corretores', href: '/corretores', current: false },
   { name: 'Anunciar', href: '/announce', current: false },
   { name: 'Buscar', href: '/urso', current: false },
 ]
@@ -50,7 +51,9 @@ export default function Navbar(props: PropsNavbar) {
                 <div className="hidden sm:ml-6 sm:block font-black text-gray-300">
                   <div className="flex space-x-4 ">
                     <div className="font-sans italic w-20 text-2xl">
+                      <a href="./">
                       Capimóveis
+                      </a>
                     </div>
                   </div>
                 </div>

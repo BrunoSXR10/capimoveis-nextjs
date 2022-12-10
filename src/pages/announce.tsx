@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import TabelaCorretor from "../components/tabelaC";
+import TabelaCorretor from "./tabelaC";
 
 export default function TabelaAnunciar() {
   return (
