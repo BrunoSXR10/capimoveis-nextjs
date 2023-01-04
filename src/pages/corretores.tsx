@@ -1,6 +1,7 @@
+import { useState } from "react";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
-import Card from "./card";
+import CardCorretor from "./bloc/corretor";
 import TabelaCorretor from "./tabelaC";
 
 export async function getStaticProps() {
@@ -15,11 +16,14 @@ export async function getStaticProps() {
   };
 }
 
-export default function CardPage({ corretor }) {
+export default function Corretores({ corretor }) {
   return (
     <>
-      <Navbar/>
+    <Navbar/>
       <Layout>
+        <h1 className="flex justify-center text-3xl font-sans italic font-black mt-3">
+          Corretores
+        </h1>
         <div className="h-screen">
           <div className="flex mt-16 justify-center">
             {corretor.map((item) => (

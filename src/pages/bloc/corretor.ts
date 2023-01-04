@@ -3,4 +3,5 @@ export default interface CardCorretor {
   nome: string;
   creci: number;
   telefone: number;
+  login: string
 }
